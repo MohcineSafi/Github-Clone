@@ -26,4 +26,10 @@ router.get("/check", (req, res) => {
   }
 });
 
+router.get("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    res.json({ message: "Logged out" });
+  });
+});
+
 export default router;
